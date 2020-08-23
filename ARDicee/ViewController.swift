@@ -30,20 +30,7 @@ class ViewController: UIViewController, ARSCNViewDelegate
 
     // Show statistics such as fps and timing information
     sceneView.showsStatistics = true
-/*
-    // How to create a simple cube with a re color
-    let material = SCNMaterial()
-    material.diffuse.contents = UIColor.red
 
-    let cube = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
-    cube.materials = [material]
-
-    let node = SCNNode()
-    node.position = SCNVector3(0.0, 0.1, -0.5)
-    node.geometry = cube
-
-    sceneView.scene.rootNode.addChildNode(node)
-*/
     sceneView.autoenablesDefaultLighting = true
   }
 
@@ -159,8 +146,8 @@ class ViewController: UIViewController, ARSCNViewDelegate
   /// - Parameter dice: Dice to roll
   private func roll(dice: SCNNode)
   {
-    let randomX = CGFloat(Float(Int.random(in: 1...20)) * Float.pi / 2.0)
-    let randomZ = CGFloat(Float(Int.random(in: 1...20)) * Float.pi / 2.0)
+    let randomX = CGFloat(Float(Int.random(in: 1...4)) * Float.pi / 2.0)
+    let randomZ = CGFloat(Float(Int.random(in: 1...4)) * Float.pi / 2.0)
 
     dice.runAction(SCNAction.rotateBy(x: randomX,
                                       y: 0.0,
